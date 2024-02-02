@@ -1,0 +1,15 @@
+name: screwdriver-cd-test/test-pipeline-template
+version: '1.0'
+maintainer: test@example.com
+config:
+  shared:
+    image: 2
+    environment:
+      KEYNAME: value
+    secrets:
+      - NPM_TOKEN
+  jobs:
+    main:
+      steps:
+        - init: npm install
+        - test: npm test
