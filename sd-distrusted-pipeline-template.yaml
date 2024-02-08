@@ -1,4 +1,5 @@
-name: screwdriver-cd-test/test-distrusted-pipeline-template
+namespace: screwdriver-cd-test
+name: test-distrusted-pipeline-template
 version: '1.0'
 description: template for testing
 maintainer: test@example.com
@@ -6,11 +7,9 @@ config:
   shared:
     image: node:18
     environment:
-      KEYNAME: value
-    secrets:
-      - NPM_TOKEN
+      FOO: bar
   jobs:
     main:
       steps:
-        - init: npm install
-        - test: npm test
+        - pretest: echo 'pretest'
+        - test: echo $FOO

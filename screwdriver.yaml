@@ -34,15 +34,15 @@ jobs:
         <<: *validate
         environment:
             SD_TEMPLATE_PATH: ./sd-invalid-pipeline-template.yaml
-    init-test-template:
+    init-test-pipeline-template:
         <<: *publish
         environment:
             SD_TEMPLATE_PATH: ./sd-init-pipeline-template.yaml
-    init-test-trusted-template:
+    init-test-trusted-pipeline-template:
         <<: *publish
         environment:
             SD_TEMPLATE_PATH: ./sd-trusted-pipeline-template.yaml
-    init-test-distrusted-template:
+    init-test-distrusted-pipeline-template:
         <<: *publish
         environment:
             SD_TEMPLATE_PATH: ./sd-distrusted-pipeline-template.yaml
